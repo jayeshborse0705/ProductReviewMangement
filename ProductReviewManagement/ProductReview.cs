@@ -50,5 +50,14 @@ namespace ProductReviewManagement
                 Console.WriteLine("ProductId: {0} || UserId: {1} || Review: {2} || Rating: {3} || IsLike:{4}\n", product.ProductId, product.UserId, product.Review, product.Rating, product.IsLike);
             }
         }
+
+        // UC 2: Retrieve Top Three Records Whose Rating is High
+        public int RetrieveTopThreeRating()
+        {
+            AddProductReview();
+            var res = (from product in ProductList orderby product.Rating descending select product).Take(3).ToList();
+            DisplayList();
+            return res.Count;
+        }
     }
 }

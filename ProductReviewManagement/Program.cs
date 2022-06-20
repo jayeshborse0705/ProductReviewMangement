@@ -9,6 +9,9 @@ namespace ProductReviewLinq
             ProductReview productReview = new ProductReview();
             productReview.AddProductReview();
             productReview.DisplayList();
+            productReview.RetrieveTopThreeRating();
+            
+
         }
     }
 }
