@@ -56,5 +56,15 @@ namespace PRTest
             string actual = product.RetrieveOnlyProductIdAndReviews();
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// TC 6: Skip top Five records
+        /// </summary>
+        [Test]
+        public void givenRecords_SkipTopFiveandReturn()
+        {
+            string expected = "4 3 9 1 3 3 5 5 2 3 9 1 2 1 2 5 7 8 1 5 ";
+            string actual = product.SkipTop5Record();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

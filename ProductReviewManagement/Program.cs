@@ -7,7 +7,7 @@ namespace ProductReviewLinq
         public static void Main(string[] args)
         {
             ProductReview productReview = new ProductReview();
-            productReview.AddProductReview();
+           productReview.AddProductReview();
             productReview.DisplayList();
             productReview.RetrieveTopThreeRating();
 
