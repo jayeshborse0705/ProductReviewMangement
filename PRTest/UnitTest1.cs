@@ -47,7 +47,7 @@ namespace PRTest
         }
 
         /// <summary>
-        /// TC 5: Retrieving the product id and Review from list
+        /// TC 5,7: Retrieving the product id and Review from list
         /// </summary>
         [Test]
         public void TestMethodForProductId()
@@ -57,13 +57,23 @@ namespace PRTest
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// TC 7: Skip top Five records
+        /// TC 6: Skip top Five records
         /// </summary>
         [Test]
         public void givenRecords_SkipTopFiveandReturn()
         {
             string expected = "4 3 9 1 3 3 5 5 2 3 9 1 2 1 2 5 7 8 1 5 ";
             string actual = product.SkipTop5Record();
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// TC 8: Adding a Productreview details in Data Table
+        /// </summary>
+        [Test]
+        public void GivenCreateFunctionforDT_returnCountofListCreated()
+        {
+            int expected = 25;
+            int actual = product.CreateDataTable();
             Assert.AreEqual(expected, actual);
         }
     }
