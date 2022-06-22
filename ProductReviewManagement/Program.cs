@@ -10,6 +10,7 @@ namespace ProductReviewLinq
             productReview.AddProductReview();
             productReview.DisplayList();
             productReview.RetrieveTopThreeRating();
+            productReview.RetrieveTopThreeRating();
 
 
         }
