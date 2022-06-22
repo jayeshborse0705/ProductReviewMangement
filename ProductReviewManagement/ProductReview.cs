@@ -76,6 +76,19 @@ namespace ProductReviewManagement
             }
             return nameList;
         }
+        // UC 5: Retrieving the product id and Review from list
+        public string RetrieveOnlyProductIdAndReviews()
+        {
+            string result = "";
+            AddProductReview();
+            var productList = ProductList.Select(product => new { ProductId = product.ProductId, Review = product.Review }).ToList();
+            foreach (var element in productList)
+            {
+                Console.WriteLine("ProductId: " + element.ProductId + "\tReview: " + element.Review);
+                result += element.ProductId + " ";
+            }
+            return result;
+        }
         public void DisplayList()
         {
             foreach (Product product in ProductList)
