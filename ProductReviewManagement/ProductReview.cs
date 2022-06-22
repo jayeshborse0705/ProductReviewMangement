@@ -121,6 +121,20 @@ namespace ProductReviewManagement
 
             return productdt.Rows.Count;
         }
+        // UC 9: Retrieve the records whose column islike has true using DataTable
+        public string ReturnsOnlyIsLikeFieldAsTrue()
+        {
+            List<Product> ProductList = new List<Product>();
+            CreateDataTable();
+            string nameList = "";
+            var res = from product in productdt.AsEnumerable() where product.Field<bool>("IsLike") == true select product;
+            foreach (var p in res)
+            {
+                Console.WriteLine("{0} | {1} | {2} | {3} | {4} ", p["ProductId"], p["UserId"], p["Rating"], p["Review"], p["IsLike"]);
+                nameList += p["UserId"] + " ";
+            }
+            return nameList;
+        }
         public void DisplayList()
         {
             foreach (Product product in ProductList)
