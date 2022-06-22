@@ -44,6 +44,11 @@ namespace ProductReviewManagement
             return ProductList.Count;
         }
 
+        public string AverageofRatingBasedonProductId()
+        {
+            throw new NotImplementedException();
+        }
+
         // UC 2: Retrieve Top Three Records Whose Rating is High
         public int RetrieveTopThreeRating()
         {
@@ -135,6 +140,7 @@ namespace ProductReviewManagement
             }
             return nameList;
         }
+
         public void DisplayList()
         {
             foreach (Product product in ProductList)

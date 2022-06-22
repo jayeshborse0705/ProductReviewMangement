@@ -86,5 +86,15 @@ namespace PRTest
             string actual = product.ReturnsOnlyIsLikeFieldAsTrue();
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// TC 10: Average of rating based on ProductId
+        /// </summary>
+        [Test]
+        public void TestMethodForReturns_AverageofRating()
+        {
+            string expected = "3 3 2 5 2 1 3 1 ";
+            string actual = product.AverageofRatingBasedonProductId();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
