@@ -25,5 +25,15 @@ namespace PRTest
             int actual = product.AddProductReview();
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// TC 3: Retrieve records from list based on productid and rating > 3 
+        /// </summary>
+        [Test]
+        public void TestMethodForRetrieveRecordsBasedOnRatingAndProductId()
+        {
+            string expected = "7 3 3 15 7 ";
+            string actual = product.RetrieveRecordsBasedOnRatingAndProductId();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

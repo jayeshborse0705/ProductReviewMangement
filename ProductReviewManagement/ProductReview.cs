@@ -42,15 +42,6 @@ namespace ProductReviewManagement
             return ProductList.Count;
         }
 
-        //Display List Content
-        public void DisplayList()
-        {
-            foreach (Product product in ProductList)
-            {
-                Console.WriteLine("ProductId: {0} || UserId: {1} || Review: {2} || Rating: {3} || IsLike:{4}\n", product.ProductId, product.UserId, product.Review, product.Rating, product.IsLike);
-            }
-        }
-
         // UC 2: Retrieve Top Three Records Whose Rating is High
         public int RetrieveTopThreeRating()
         {
@@ -58,6 +49,26 @@ namespace ProductReviewManagement
             var res = (from product in ProductList orderby product.Rating descending select product).Take(3).ToList();
             DisplayList();
             return res.Count;
+        }
+        // UC 3: Retrieve  records from list based on productid and Rating > 3  
+        public string RetrieveRecordsBasedOnRatingAndProductId()
+        {
+            AddProductReview();
+            string nameList = "";
+            var productList = (from product in ProductList where product.Rating > 3 && (product.ProductId == 1 || product.ProductId == 4 || product.ProductId == 9) select product);
+            foreach (var product in productList)
+            {
+                nameList += product.UserId + " ";
+                Console.WriteLine("ProductId: {0} || UserId: {1} || Review: {2} || Rating: {3} || IsLike:{4}\n", product.ProductId, product.UserId, product.Review, product.Rating, product.IsLike);
+            }
+            return nameList;
+        }
+        public void DisplayList()
+        {
+            foreach (Product product in ProductList)
+            {
+                Console.WriteLine("ProductId: {0} || UserId: {1} || Review: {2} || Rating: {3} || IsLike:{4}\n", product.ProductId, product.UserId, product.Review, product.Rating, product.IsLike);
+            }
         }
     }
 }
