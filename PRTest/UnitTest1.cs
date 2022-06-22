@@ -57,7 +57,7 @@ namespace PRTest
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// TC 6: Skip top Five records
+        /// TC 7: Skip top Five records
         /// </summary>
         [Test]
         public void givenRecords_SkipTopFiveandReturn()
